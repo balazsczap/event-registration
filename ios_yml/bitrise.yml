@@ -89,7 +89,7 @@ workflows:
         inputs:
         - project_path: ios/EventRegistration.xcworkspace
         - scheme: EventRegistration
-        - configuration: Release
+        - configuration: Debug
         - verbose_log: 'yes'
         - distribution_method: enterprise
         - automatic_code_signing: "off"
