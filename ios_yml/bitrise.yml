@@ -86,6 +86,7 @@ workflows:
             set -x
             sudo security delete-certificate -c 'Apple Development: Tooling Bot Bitrise'
     - xcode-archive@6:
+        title: Xcode Archive & Export - Enterprise Distribution (Debug)
         inputs:
         - project_path: ios/EventRegistration.xcworkspace
         - scheme: EventRegistration
