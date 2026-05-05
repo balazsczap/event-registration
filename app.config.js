@@ -2,7 +2,7 @@ const IS_DEV = process.env.APP_VARIANT === 'development';
 
 module.exports = {
   expo: {
-    name: IS_DEV ? 'Event-Registration (Dev)' : 'Event-Registration',
+    name: 'Event-Registration',
     slug: 'Event-Registration',
     version: '1.0.0',
     orientation: 'portrait',
