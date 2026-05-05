@@ -12,6 +12,13 @@ module.exports = {
     ios: {
       icon: './assets/expo.icon',
       bundleIdentifier: 'io.bitrise.hackathon2026',
+      ...(IS_DEV && {
+        infoPlist: {
+          NSAppTransportSecurity: {
+            NSAllowsArbitraryLoads: true,
+          },
+        },
+      }),
     },
     android: {
       adaptiveIcon: {
