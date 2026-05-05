@@ -91,8 +91,8 @@ workflows:
         - scheme: EventRegistration
         - configuration: Release
         - verbose_log: 'yes'
-        - distribution_method: ad-hoc
-        - automatic_code_signing: api-key
+        - distribution_method: enterprise
+        - automatic_code_signing: "off"
     - deploy-to-bitrise-io@2: {}
     triggers:
       push: []

@@ -11,7 +11,7 @@ module.exports = {
     userInterfaceStyle: 'automatic',
     ios: {
       icon: './assets/expo.icon',
-      bundleIdentifier: IS_DEV ? 'io.bitrise.hackathon2026.dev' : 'io.bitrise.hackathon2026',
+      bundleIdentifier: 'io.bitrise.hackathon2026',
     },
     android: {
       adaptiveIcon: {
@@ -21,7 +21,7 @@ module.exports = {
         monochromeImage: './assets/images/android-icon-monochrome.png',
       },
       predictiveBackGestureEnabled: false,
-      package: IS_DEV ? 'io.bitrise.hackathon2026.dev' : 'io.bitrise.hackathon2026',
+      package: 'io.bitrise.hackathon2026',
     },
     web: {
       output: 'static',
@@ -29,7 +29,7 @@ module.exports = {
     },
     plugins: [
       'expo-router',
-      'expo-dev-client',
+      ...(IS_DEV ? ['expo-dev-client'] : []),
       [
         'expo-splash-screen',
         {
@@ -42,18 +42,12 @@ module.exports = {
       ],
       [
         './withCustomSigning.js',
-        IS_DEV
-          ? {
-              codeSignStyle: 'Automatic',
-              teamId: '4UT92WGGSF',
-              codeSignIdentity: 'Apple Development',
-            }
-          : {
-              codeSignStyle: 'Manual',
-              teamId: '4UT92WGGSF',
-              provisioningProfileId: 'a51aa59f-892e-4961-a9c5-6c65d1a82a31',
-              codeSignIdentity: 'iPhone Distribution',
-            },
+        {
+          codeSignStyle: 'Manual',
+          teamId: '4UT92WGGSF',
+          provisioningProfileId: 'a51aa59f-892e-4961-a9c5-6c65d1a82a31',
+          codeSignIdentity: 'iPhone Distribution',
+        },
       ],
     ],
     experiments: {
